@@ -1,0 +1,350 @@
+\documentclass[a4paper, 12pt]{article}%тип документа
+
+%Русский язык
+\usepackage[T2A]{fontenc} %кодировка
+\usepackage[utf8]{inputenc} %кодировка исходного кода
+\usepackage[english,russian]{babel} %локализация и переносы
+
+\usepackage{multirow}
+
+%Вставка картинок
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+
+%Производные
+\usepackage{physics}
+
+\setlength{\parindent}{0pt}
+
+%Математика
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools}
+
+\usepackage[left=10mm, top=15mm, right=10mm, bottom=15mm, footskip=10mm]{geometry}
+
+%Заголовок
+\pagenumbering{gobble}
+\title{\textbf{Разбор викторины по графикам}}
+%\author{Нечаева Дарья}
+\date{}
+
+\begin{document}
+    \maketitle
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.5]{графики0.jpg}
+	\end{center}
+    \end{figure}
+    \newpage
+
+    \begin{center} \section*{1 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики1.jpg}
+	\end{center}
+    \end{figure}
+    \subsection*{\underline{1 способ}}
+    
+    Рассмотрим наш график функции:
+    \begin{equation*}
+        f(x) = x^{2} + 2x + 5
+    \end{equation*}
+    Вспомним стандартный вид параболы:
+    \begin{equation*}
+        f(x) = ax^{2} + bx + c
+    \end{equation*}
+    Коэффициент $a = 1$, т.е. $a > 0$, значит ветви параболы направлены вверх, т.е. вариант А нам не подходит. \newline
+    
+    Коэффициент $c = 5$, значит парабола пересекает ось $y$ в точке (0,5). Вариант Г нам не подходит, т.к. в том случае $c < 0$. \newline
+
+    Коэффициент $b = 2$. Если $b > 0$, то график сдвигается влево, если $b < 0$, то вправо. В нашем случае график должен съехать влево, значит правильный вариант ответа - В. \newline
+
+    \subsection*{\underline{2 способ}}
+    
+    Выделим полный квадрат:  \newline
+    \begin{equation*}
+        f(x) = x^{2} + 2x + 5 = (x^{2} + 2x + 1) + 4 = (x + 1)^{2} + 4
+    \end{equation*}
+    Вспомним уравнение параболы:
+    \begin{equation*}
+        f(x) = a(x-x_{0})^{2} + y_{0}
+    \end{equation*}
+    Значит $a = 1$, т.е. ветви направлены вверх. $(x_{0}, y_{0}) = (-1, 4)$ -- координаты вершины параболы. Нам подходит только вариант В. \newline
+
+    \subsection*{\underline{Ответ: В}}
+    \newpage
+
+    \begin{center} \section*{2 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики2.jpg}
+	\end{center}
+    \end{figure}
+
+    Вспомним уравнение параболы:
+    \begin{equation*}
+        y = ax^{2} + bx + c
+    \end{equation*}
+    Коэффициент $c$ отвечает за пересечение с осью $y$. Из рисунка видно, что $c = -4$. Также на рисунке видно, что парабола проходит через точки $(-1, 0)$ и $(1, 2)$. Запишем систему и подставим в нее значения точек и найденный $c$:
+    \begin{equation*}
+        \begin{cases}
+            0 = a \cdot (-1)^{2} + b \cdot (-1) - 4 \\
+            2 = a \cdot (1)^{2} + b \cdot 1 - 4
+        \end{cases}
+    \end{equation*}
+    \begin{equation*}
+        \begin{cases}
+            a - b = 4\\
+            a + b = 6
+        \end{cases}
+    \end{equation*}
+    \begin{equation*}
+        (a - b) - (a + b) = 4 - 6
+    \end{equation*}
+    \begin{equation*}
+        -2 b = -2 \;\;\;\;\;\;\;\;\; b = 1 \;\;\;\;\;\;\;\;\; a = b + 4 = 1 + 4 = 5
+    \end{equation*} 
+    В итоге получаем: $a + b + c = 5 + 1 - 4 = 2$ \newline
+
+    \subsection*{\underline{Ответ: Г}}
+    \newpage
+
+    \begin{center} \section*{3 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики3.jpg}
+	\end{center}
+    \end{figure}
+
+    \begin{wrapfigure}{r}{5 cm}
+	\includegraphics[width=0.95\linewidth]{четверти.jpg}
+    \end{wrapfigure}
+
+    Вспомним уравнение гиперболы:
+    \begin{equation*}
+        y = \frac{k}{x}
+    \end{equation*}
+
+    Если $k > 0$, то график расположен в I и III четвертях, если $k < 0$, то в II и IV четвертях. У нас $k = 5$, значит график лежит в I и III четвертях, т.е. варианты В и Г не подходят.  \newline
+
+    Посмотрим, какое значение будет принимать функция при $x = 1$:
+    \begin{equation*}
+        y = \frac{5}{1} = 5
+    \end{equation*}
+    Значит гипербола пройдет через точку $(1, 5)$, т.е. нам подходит вариант А.
+
+    \subsection*{\underline{Ответ: А}}
+    \newpage
+
+    \begin{center} \section*{4 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики4.jpg}
+	\end{center}
+    \end{figure}
+
+    \begin{wrapfigure}{r}{5 cm}
+	\includegraphics[width=0.95\linewidth]{угол наклона.png}
+    \end{wrapfigure}
+
+    Коэффициент $b$ отвечает за пересечение с осью $y$. Из рисунка видно, что $b = -3$. \newline
+
+    Вспомним, что угловой коэффициент $k = tg(\alpha)$, где $\alpha$ -- угол между прямой и осью $x$. Найдем тангенс угла наклона:
+
+    \begin{equation*}
+        k = tg(\alpha) = \frac{2}{1} = 2
+    \end{equation*}
+    
+    Значит уравнение прямой:
+    \begin{equation*}
+        f(x) = 2x - 3
+    \end{equation*}
+    Найдем $f(20)$:
+    \begin{equation*}
+        f(20) = 2 \cdot 20 - 3 = 37
+    \end{equation*}
+
+    \subsection*{\underline{Ответ: Б}}
+    \newpage
+
+    \begin{center} \section*{5 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики5.jpg}
+	\end{center}
+    \end{figure}
+
+    Вспомним уравнение прямой:
+    \begin{equation*}
+        f(x) = kx + b
+    \end{equation*}
+
+    Из задания ясно, что $k = 3$, $b = -2$. \newline
+    
+    Коэффициент $b$ отвечает за пересечение с осью $y$. Значит прямая проходит через точку $(0, -2)$, т.е. варианты Б и Г не подходят. \newline
+
+    Т.к. $k > 0$, то прямая возрастает, значит нам подходит вариант А. \newline
+
+    \subsection*{\underline{Ответ: А}}
+    \newpage
+
+    \begin{center} \section*{6 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики6.jpg}
+	\end{center}
+    \end{figure}
+
+    Вспомним уравнение параболы:
+    \begin{equation*}
+        y = ax^{2} + bx + c
+    \end{equation*}
+
+    Из задания ясно, что $a = 2$, $b = 1$, $c = -3$. \newline
+    Коэффициент $c$ отвечает за пересечение с осью $y$. Т.к. $c = -3$, то парабола проходит через точку $(0, -3)$, значит варианты А и В не подходят.
+
+    \subsection*{\underline{1 способ}}
+    Коэффициент $b = 1$. Если $b > 0$, то график сдвигается влево, если $b < 0$, то вправо. В нашем случае график должен съехать влево, значит правильный вариант ответа - Б.
+
+    \subsection*{\underline{2 способ}}
+    Найдем координаты вершины параболы по формуле:
+    \begin{equation*}
+        x_{0} = \frac{-b}{2a} = \frac{-1}{2 \cdot 2} = \frac{-1}{4}
+    \end{equation*}
+    $x_{0} < 0$, значит нам подходит вариант Б.
+
+    \subsection*{\underline{Ответ: Б}}
+    \newpage
+
+    \begin{center} \section*{7 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики7.jpg}
+	\end{center}
+    \end{figure}
+
+    Из рисунка видно, что при $x = 5$, $f(x) = f(5) = 1$. Но я приведу классическое решение. \newline
+
+    Вспомним уравнение параболы:
+    \begin{equation*}
+        y = ax^{2} + bx + c
+    \end{equation*}
+    Коэффициент $c$ отвечает за пересечение с осью $y$. Из рисунка видно, что $c = 6$. Также на рисунке видно, что парабола проходит через точки $(1, 1)$ и $(5, 1)$. Запишем систему и подставим в нее значения точек и найденный $c$:
+    \begin{equation*}
+        \begin{cases}
+            1 = a \cdot (1)^{2} + b \cdot (1) + 6 \\
+            1 = a \cdot (5)^{2} + b \cdot 5 = 6
+        \end{cases}
+    \end{equation*}
+    \begin{equation*}
+        \begin{cases}
+            a + b = -5\\
+            25a + 5b = -5
+        \end{cases}
+    \end{equation*}
+    \begin{equation*}
+        \begin{cases}
+            a + b = -5\\
+            5a + b = -1
+        \end{cases}
+    \end{equation*}
+    \begin{equation*}
+        (a + b) - (5a + b) = -5 + 1
+    \end{equation*}
+    \begin{equation*}
+        -4a = -4 \;\;\;\;\;\;\;\;\; a = 1 \;\;\;\;\;\;\;\;\; b = -a - 5 = -1 - 5 = -6
+    \end{equation*} 
+    В итоге получаем уравнение:
+    \begin{equation*}
+        y = x^{2} - 6x + 6
+    \end{equation*}
+    Найдем $f(5)$:
+    \begin{equation*}
+        y = 5^{2} - 6 \cdot 5 + 6 = 25 - 30 + 6 = 1
+    \end{equation*}
+    К сожалению, в этом задании нет правильного ответа :(
+
+    \subsection*{\underline{Ответ: 1}}
+    \newpage
+
+    \begin{center} \section*{8 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики8.jpg}
+	\end{center}
+    \end{figure}
+
+    На рисунке отмечено множество точек, через которые проходит гипербола. Выберем любую точку: $(4, 1)$. Найдем $k$:
+    \begin{equation*}
+        1 = \frac{k}{4} \;\;\;\;\;\;\;\;\; k = 4
+    \end{equation*}
+    В итоге наша функция:
+    \begin{equation*}
+        f(x) = \frac{4}{x}
+    \end{equation*}
+    Найдем $x$, если $f(x) = 20$:
+    \begin{equation*}
+        20 = \frac{4}{x} \;\;\;\;\;\;\;\;\; x = \frac{4}{20} = \frac{20}{100} = 0,2
+    \end{equation*}
+    К сожалению, в этом задании нет правильного ответа :(
+
+    \subsection*{\underline{Ответ: 0,2}}
+    \newpage
+
+    \begin{center} \section*{9 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики9.jpg}
+	\end{center}
+    \end{figure}
+
+    Вспомним уравнение гиперболы:
+    \begin{equation*}
+        y = \frac{k}{x}
+    \end{equation*}
+    Перепишем исходное уравнение:
+    \begin{equation*}
+        y = \frac{1}{3x} = \frac{\frac{1}{3}}{x}
+    \end{equation*}
+    Отсюда $k = \frac{1}{3}$ Если $k > 0$, то график расположен в I и III четвертях, если $k < 0$, то в II и IV четвертях. У нас $k > 0$, значит график лежит в I и III четвертях, т.е. варианты В и Г не подходят.  \newline
+
+    Посмотрим, какое значение будет принимать функция при $x = 1$:
+    \begin{equation*}
+        y = \frac{1}{3 \cdot 1} = \frac{1}{3}
+    \end{equation*}
+    Значит гипербола пройдет через точку $(1, \frac{1}{3})$, т.е. нам подходит вариант А.
+
+    \subsection*{\underline{Ответ: А}}
+    \newpage
+
+    \begin{center} \section*{10 задание} \end{center}
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale = 0.4]{графики10.jpg}
+	\end{center}
+    \end{figure}
+
+    \subsection*{\underline{1 способ}}
+    Вспомним уравнение корня:
+    \begin{equation*}
+        y = \sqrt{x - x_{0}} + y_{0}
+    \end{equation*}
+    где $(x_{0}, y_{0})$ -- координаты левого конца. Тогда получаем $(x_{0}, y_{0}) = (5, 0)$. Значит нам подходит вариант Б.
+
+    \subsection*{\underline{2 способ}}
+    Под корнем не может быть отрицательных значений, значит $x - 5 \ge 0$. Отсюда следует, что $x \ge 5$, значит при $x < 5$ функция не определена (не существует). Значения $x < 5$ есть во всех вариантах кроме Б.
+
+    \subsection*{\underline{Ответ: Б}}
+    \newpage
+
+    \begin{figure}[h]
+	\begin{center}
+		\includegraphics[width = 1\textwidth]{спс.jpg}
+	\end{center}
+    \end{figure}
+    
+\end{document}
