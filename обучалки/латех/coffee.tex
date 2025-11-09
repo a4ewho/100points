@@ -1,0 +1,79 @@
+\documentclass[a4paper, 12pt]{article}%тип документа
+
+%Русский язык
+\usepackage[T2A]{fontenc} %кодировка
+\usepackage[utf8]{inputenc} %кодировка исходного кода
+\usepackage[english,russian]{babel} %локализация и переносы
+
+\usepackage{multirow}
+
+%Вставка картинок
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{amsmath}
+
+
+%Производные
+\usepackage{physics}
+
+\setlength{\parindent}{0pt}
+
+%Математика
+\usepackage{amsmath, amsfonts, amssymb, amsthm, mathtools}
+
+\usepackage[left=10mm, top=15mm, right=10mm, bottom=15mm, footskip=10mm]{geometry}
+
+%Заголовок
+\pagenumbering{gobble}
+\title{\textbf{Как решать задание №5 с автоматами?}}
+%\author{Нечаева Дарья}
+\date{}
+
+\begin{document}
+    \maketitle
+    %\begin{figure}[h]
+	%\begin{center}
+		%\includegraphics[scale = 0.5]{графики0.jpg}
+	%\end{center}
+    %\end{figure}
+
+    \section*{\underline{Задание:} В торговом центре два одинаковых автомата продают кофе. Обслуживание автоматов происходит по вечерам после закрытия центра. Известно, что вероятность события «К вечеру в первом автомате закончится кофе» равна 0,25. Такая же вероятность события «К вечеру во втором автомате закончится кофе». Вероятность того, что кофе к вечеру закончится в обоих автоматах, равна 0,15. Найдите вероятность того, что к вечеру дня кофе останется в обоих автоматах.}
+
+    В этом задании вероятности нам уже даны, поэтому произведением вероятностей мы пользоваться не можем. \newline
+
+    Обозначим 4 случая:
+    \begin{itemize}
+        \item \underline{\textbf{ОО}} -- кофе осталось в обоих автоматах
+        \item \underline{\textbf{ЗО}} -- кофе закончилось только в первом автомате
+        \item \underline{\textbf{ОЗ}} -- кофе закончилось только во втором автомате
+        \item \underline{\textbf{ЗЗ}} -- кофе закончилось в обоих автоматах
+    \end{itemize}
+
+    Из условия следует: \newline
+    \underline{\textbf{ЗЗ}} = 0,15 \newline
+
+    Кофе закончилось в первом автомате включает в себя два случая (З стоит на первом месте): \newline
+    \underline{\textbf{ЗО}} и \underline{\textbf{ЗЗ}} \newline
+    Значит из условия: \newline
+    \underline{\textbf{ЗО}} + \underline{\textbf{ЗЗ}} = 0,25 \newline
+    Находим \underline{\textbf{ЗО}}:  \newline
+    \underline{\textbf{ЗО}} = 0,25 - \underline{\textbf{ЗЗ}} = 0,25 - 0,15 = 0,1 \newline
+
+    Кофе закончилось во втором автомате включает в себя два случая (З стоит на втором месте): \newline
+    \underline{\textbf{ОЗ}} и \underline{\textbf{ЗЗ}} \newline
+    Значит из условия: \newline
+    \underline{\textbf{ОЗ}} + \underline{\textbf{ЗЗ}} = 0,25 \newline
+    Находим \underline{\textbf{ОЗ}}:  \newline
+    \underline{\textbf{ОЗ}} = 0,25 - \underline{\textbf{ЗЗ}} = 0,25 - 0,15 = 0,1 \newline
+
+    По сумме всевозможных вероятностей знаем: \newline
+    \underline{\textbf{ОО}} + \underline{\textbf{ЗО}} + \underline{\textbf{ОЗ}} + \underline{\textbf{ЗЗ}} = 1 \newline
+    Находим \underline{\textbf{ОО}}:  \newline 
+    \underline{\textbf{ОО}} = 1 - \underline{\textbf{ЗО}} - \underline{\textbf{ОЗ}} - \underline{\textbf{ЗЗ}} = 1 - 0,1 - 0,1 - 0,15 = 0,65 \newline
+
+    \section*{\underline{Ответ: 0,65}}
+    
+\end{document}
